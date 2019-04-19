@@ -1,4 +1,4 @@
-package lp2.conexao;
+package conexao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,9 +9,11 @@ public class ConnectionFactory {
 	public Connection getConnection() {
 		try {
 			return DriverManager.getConnection(
-						"jdbc:postgresql://localhost:5432/lp2", "postgres", "senhadopostgres");
+					"jdbc:postgresql://localhost/provalp2", "postgres", "senhadopostgres");
 		} catch (SQLException e) {
-			throw new RuntimeException();
+			e.printStackTrace();
+			return null;
 		}
 	}
+
 }
